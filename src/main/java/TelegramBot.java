@@ -44,7 +44,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         if(!userMap.keySet().contains(userMes)){
             userMap.put(userMes,true);
             try {
-                File file = new File("D:\\Projects\\Java\\FirstTelegramBot\\src\\main\\resources\\users.txt");
+                File file = new File("src/main/resources/users.txt");
                 file.delete();
                 file.createNewFile();
                 FileOutputStream fout = new FileOutputStream(file.getPath());
@@ -54,7 +54,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             } catch (IOException ignored){
                 System.out.println("a");
             }
-            System.out.println(userMes.getFirstName() + " " + userMes.getLastName());
+            System.out.println(userMes.getFirstName() + " " + userMes.getUserName());
         }
         if(update.hasMessage() && !update.getMessage().getText().isEmpty()){
             SendMessage answer = new SendMessage();
